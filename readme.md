@@ -5,6 +5,8 @@ HTTP middleware adaptors and utilities based on Mat Ryer's post [Writing middlew
 #Types/Interfaces
 
 - Adapter interface : func(h http.Handler) http.Handler
+- HttpLog interface : contains 2 functions. Request() to log the request and Response to log the response
+- LogResponseWriter : internal struct to hold the http writer and record the status changes
 
 #Functions
 
@@ -16,7 +18,7 @@ HTTP middleware adaptors and utilities based on Mat Ryer's post [Writing middlew
 - EmbedRequestId : takes a requestid generator and embeds a requestId in the request's context
 - EmbedGormDb : takes a [GORM](https://gorm.io/index.html) db and embeds it in the request's context
 - LimitToMethods : takes one or more http verbs and limits requests to those methods
-
+- CheckNotFound : usually used on the last "/" route to ensure a 404 response on unknown URI paths. will force a 404 response if the request path does not match the supplied path
 
 #Notes:
 
