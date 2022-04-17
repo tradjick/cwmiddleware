@@ -14,7 +14,9 @@ HTTP middleware adaptors and utilities based on Mat Ryer's post [Writing middlew
 #MiddlewareAdapters
 
 - EmbedRequestId : takes a requestid generator and embeds a requestId in the request's context
-- EmbedGormDb : takes a gorm [GORM](https://gorm.io/index.html) db and embeds it in the request'scontext
+- EmbedGormDb : takes a [GORM](https://gorm.io/index.html) db and embeds it in the request's context
+- LimitToMethods : takes one or more http verbs and limits requests to those methods
+
 
 #Notes:
 
