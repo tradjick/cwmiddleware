@@ -1,4 +1,4 @@
-module Middleware
+module github.com/tradjick/cwmiddleware
 
 go 1.18
 

@@ -1,4 +1,4 @@
-package Middleware
+package cwmiddlware
 
 func reverseArray(a []Adapter) []Adapter {
 	for i, j := 0, len(a)-1; i < j; i, j = i+1, j-1 {

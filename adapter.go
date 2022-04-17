@@ -1,4 +1,4 @@
-package Middleware
+package cwmiddlware
 
 import "net/http"
 
