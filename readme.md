@@ -19,6 +19,7 @@ HTTP middleware adaptors and utilities based on Mat Ryer's post [Writing middlew
 - EmbedGormDb : takes a [GORM](https://gorm.io/index.html) db and embeds it in the request's context
 - LimitToMethods : takes one or more http verbs and limits requests to those methods
 - CheckNotFound : usually used on the last "/" route to ensure a 404 response on unknown URI paths. will force a 404 response if the request path does not match the supplied path
+- EmbedInContext : allows the embedding of something in the request's context. Ex. embedding a config struct under the context key of "cfg"
 
 #Notes:
 
