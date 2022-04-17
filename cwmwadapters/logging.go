@@ -1,7 +1,7 @@
-package logging
+package cwmwadapters
 
 import (
-	"Middleware"
+	cwmiddlware "github.com/tradjick/cwmiddleware"
 	"net/http"
 )
 
@@ -10,7 +10,7 @@ type HttpLog interface {
 	Response(r *http.Request, l *LogResponseWriter)
 }
 
-func LogRequestAdapter(hl HttpLog) Middleware.Adapter {
+func LogRequestAdapter(hl HttpLog) cwmiddlware.Adapter {
 	return func(h http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			hl.Request(r)

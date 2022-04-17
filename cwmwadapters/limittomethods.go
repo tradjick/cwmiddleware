@@ -1,11 +1,11 @@
-package limittomethods
+package cwmwadapters
 
 import (
-	"Middleware"
+	cwmiddlware "github.com/tradjick/cwmiddleware"
 	"net/http"
 )
 
-func LimitToMethods(ms ...string) Middleware.Adapter {
+func LimitToMethods(ms ...string) cwmiddlware.Adapter {
 	return func(h http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			in := false
