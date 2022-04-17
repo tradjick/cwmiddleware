@@ -26,11 +26,15 @@ type LogResponseWriter struct {
 	statusCode int
 }
 
+func (lw *LogResponseWriter) GetStatusCode() int {
+	return lw.statusCode
+}
+
 func makeLogResponseWriter(w http.ResponseWriter) *LogResponseWriter {
 	return &LogResponseWriter{w, http.StatusOK}
 }
 
-func (m *LogResponseWriter) WriteHeader(code int) {
-	m.statusCode = code
-	m.ResponseWriter.WriteHeader(code)
+func (lw *LogResponseWriter) WriteHeader(code int) {
+	lw.statusCode = code
+	lw.ResponseWriter.WriteHeader(code)
 }
